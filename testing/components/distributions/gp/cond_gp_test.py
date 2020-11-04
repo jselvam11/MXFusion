@@ -32,7 +32,7 @@ matplotlib.use('Agg')
 import GPy
 
 
-@pytest.mark.usefixtures("set_seed")
+#@pytest.mark.usefixtures("set_seed")
 class TestConditionalGaussianProcessDistribution(object):
 
     @pytest.mark.parametrize("dtype, X, X_isSamples, X_cond, X_cond_isSamples, Y_cond, Y_cond_isSamples, rbf_lengthscale, rbf_lengthscale_isSamples, rbf_variance, rbf_variance_isSamples, rv, rv_isSamples, num_samples", [

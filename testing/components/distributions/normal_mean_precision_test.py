@@ -24,7 +24,7 @@ from mxfusion.util.testutils import numpy_array_reshape
 from mxfusion.util.testutils import MockMXNetRandomGenerator
 
 
-@pytest.mark.usefixtures("set_seed")
+#@pytest.mark.usefixtures("set_seed")
 class TestNormalPrecisionDistribution(object):
 
     @pytest.mark.parametrize(
@@ -117,7 +117,7 @@ def make_symmetric(array):
     return np.reshape(d3_array, original_shape)
 
 
-@pytest.mark.usefixtures("set_seed")
+#@pytest.mark.usefixtures("set_seed")
 class TestMultivariateNormalMeanPrecisionDistribution(object):
 
     @pytest.mark.parametrize(

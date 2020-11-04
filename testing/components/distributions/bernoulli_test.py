@@ -24,7 +24,7 @@ from mxfusion.util.testutils import numpy_array_reshape
 from mxfusion.util.testutils import MockMXNetRandomGenerator
 
 
-@pytest.mark.usefixtures("set_seed")
+#@pytest.mark.usefixtures("set_seed")
 class TestBernoulliDistribution(object):
 
     @pytest.mark.parametrize(

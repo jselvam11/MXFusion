@@ -24,7 +24,7 @@ from mxfusion.util.testutils import numpy_array_reshape, plot_univariate
 from mxfusion.util.testutils import MockMXNetRandomGenerator
 
 
-@pytest.mark.usefixtures("set_seed")
+#@pytest.mark.usefixtures("set_seed")
 class TestGammaDistribution(object):
 
     @pytest.mark.parametrize("dtype, mean, mean_isSamples, variance, variance_isSamples, rv, rv_isSamples, num_samples", [
@@ -93,11 +93,11 @@ class TestGammaDistribution(object):
             variance_mx = add_sample_dimension(mx.nd, variance_mx)
         variables = {var.mean.uuid: mean_mx, var.variance.uuid: variance_mx}
 
-        mx.random.seed(0)
+        #mx.random.seed(0)
         rv_samples_rt = var.draw_samples(
             F=mx.nd, variables=variables, num_samples=num_samples)
 
-        mx.random.seed(0)
+        #mx.random.seed(0)
         beta_np = mean_np / variance_np
         alpha_np = mean_np * beta_np
         rv_samples_mx = mx.nd.random.gamma(alpha=alpha_np, beta=beta_np, dtype=dtype)
@@ -178,11 +178,11 @@ class TestGammaDistribution(object):
             beta_mx = add_sample_dimension(mx.nd, beta_mx)
         variables = {var.alpha.uuid: alpha_mx, var.beta.uuid: beta_mx}
 
-        mx.random.seed(0)
+        #mx.random.seed(0)
         rv_samples_rt = var.draw_samples(
             F=mx.nd, variables=variables, num_samples=num_samples)
 
-        mx.random.seed(0)
+        #mx.random.seed(0)
         rv_samples_mx = mx.nd.random.gamma(alpha=alpha_np, beta=beta_np, dtype=dtype)
 
         assert np.issubdtype(rv_samples_rt.dtype, dtype)

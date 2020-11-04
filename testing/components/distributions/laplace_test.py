@@ -8,7 +8,7 @@ from mxfusion.util.testutils import MockMXNetRandomGenerator
 from scipy.stats import laplace
 
 
-@pytest.mark.usefixtures("set_seed")
+#@pytest.mark.usefixtures("set_seed")
 class TestLaplaceDistribution(object):
 
     @pytest.mark.parametrize(

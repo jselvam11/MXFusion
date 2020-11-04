@@ -22,7 +22,7 @@ from mxfusion.util.testutils import numpy_array_reshape, plot_univariate, plot_b
 from mxfusion.util.testutils import MockMXNetRandomGenerator
 
 
-@pytest.mark.usefixtures("set_seed")
+#@pytest.mark.usefixtures("set_seed")
 class TestNormalDistribution(object):
 
     @pytest.mark.parametrize("dtype, mean, mean_isSamples, var, var_isSamples, rv, rv_isSamples, num_samples", [
@@ -147,7 +147,7 @@ def make_symmetric(array):
     d3_array = (d3_array[:,:,:,None]*d3_array[:,:,None,:]).sum(-3)+np.eye(2)
     return np.reshape(d3_array, original_shape)
 
-@pytest.mark.usefixtures("set_seed")
+#@pytest.mark.usefixtures("set_seed")
 class TestMultivariateNormalDistribution(object):
 
 

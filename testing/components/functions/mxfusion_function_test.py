@@ -70,7 +70,7 @@ class TestMXFusionFunctionTests(unittest.TestCase):
 
     def test_function_execution(self):
         f, f_mx = self.instantialize_customize_function()
-        np.random.seed(0)
+        #np.random.seed(0)
         A = mx.nd.array(np.random.rand(1, 3, 2))
         B = mx.nd.array(np.random.rand(1, 3, 2))
         C = mx.nd.array(np.random.rand(1))

@@ -25,7 +25,7 @@ from mxfusion.util.testutils import MockMXNetRandomGenerator, numpy_array_reshap
 
 def make_spd_matrices_3d(num_samples, num_dimensions, random_seed):
     matrices = np.zeros((num_samples, num_dimensions, num_dimensions))
-    np.random.seed(random_seed)
+    #np.random.seed(random_seed)
     for i in range(num_samples):
         matrices[i, :, :] = make_spd_matrix(num_dimensions)
     return matrices
@@ -33,7 +33,7 @@ def make_spd_matrices_3d(num_samples, num_dimensions, random_seed):
 
 def make_spd_matrices_4d(num_samples, num_data_points, num_dimensions, random_seed):
     matrices = np.zeros((num_samples, num_data_points, num_dimensions, num_dimensions))
-    np.random.seed(random_seed)
+    #np.random.seed(random_seed)
     for i in range(num_samples):
         for j in range(num_data_points):
             matrices[i, j, :, :] = make_spd_matrix(num_dimensions)
@@ -51,7 +51,7 @@ class TestWishartDistribution(object):
     def test_log_pdf(self, dtype_dof, dtype, degrees_of_freedom, random_seed,
                      scale_is_samples, rv_is_samples, num_data_points, num_samples, broadcast):
         # Create positive semi-definite matrices
-        np.random.seed(random_seed)
+        #np.random.seed(random_seed)
         rv = make_spd_matrices_4d(num_samples, num_data_points, degrees_of_freedom, random_seed=random_seed)
         if broadcast:
             scale = make_spd_matrix(dim=degrees_of_freedom)

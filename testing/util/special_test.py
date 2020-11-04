@@ -30,7 +30,7 @@ class TestSpecialFunctions:
 
     @pytest.mark.parametrize("n_dim, random_state", list(product((10, 100, 1000), range(1, 4))))
     def test_log_determinant(self, n_dim, random_state):
-        np.random.seed(random_state)
+        #np.random.seed(random_state)
         A = make_spd_matrix(dim=n_dim)
         assert all(np.linalg.eigvals(A) > 0)
 
@@ -48,7 +48,7 @@ class TestSpecialFunctions:
 
     @pytest.mark.parametrize("n_data_points, n_dim, random_state", list(product((4, ), (1, 10, 100), range(1, 4))))
     def test_log_mv_gamma(self, n_data_points, n_dim, random_state):
-        np.random.seed(random_state)
+        #np.random.seed(random_state)
         x = np.random.rand(n_data_points) + n_dim
         a = mx.nd.array(x)
         b = log_multivariate_gamma(a, n_dim, mx.nd)
@@ -59,7 +59,7 @@ class TestSpecialFunctions:
 
     @pytest.mark.parametrize("n_samples, n_data_points, n_dim, random_state", [(5, 4, 10, 0)])
     def test_log_mv_gamma_broadcast(self, n_samples, n_data_points, n_dim, random_state):
-        np.random.seed(random_state)
+        #np.random.seed(random_state)
         x = np.random.rand(n_samples, n_data_points) + n_dim
         a = mx.nd.array(x)
         b = log_multivariate_gamma(a, n_dim, mx.nd)

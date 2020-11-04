@@ -95,7 +95,7 @@ try:
         assert np.allclose(Kdiag_gpy, Kdiag_mx.asnumpy())
 
 
-    @pytest.mark.usefixtures("set_seed")
+    #@pytest.mark.usefixtures("set_seed")
     class TestGPKernels(object):
 
         @pytest.mark.parametrize("dtype, X, X_isSamples, X2, X2_isSamples, lengthscale, lengthscale_isSamples, variance, variance_isSamples, num_samples, input_dim, ARD", [

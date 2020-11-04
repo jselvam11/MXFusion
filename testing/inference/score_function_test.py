@@ -28,7 +28,7 @@ from mxfusion.components.functions.operators import broadcast_to
 from mxfusion import Variable
 
 
-@pytest.mark.usefixtures("set_seed")
+#@pytest.mark.usefixtures("set_seed")
 class TestScoreFunction(object):
     """
     Test class that tests the MXFusion.inference.score_function classes.
@@ -105,9 +105,9 @@ class TestScoreFunction(object):
     def get_ppca_grad(self, x_train, inf_type, num_samples=100):
         import random
         dtype = get_default_dtype()
-        random.seed(0)
-        np.random.seed(0)
-        mx.random.seed(0)
+        #random.seed(0)
+        #np.random.seed(0)
+        #mx.random.seed(0)
         m = self.make_ppca_model()
         q = self.make_ppca_post(m)
         observed = [m.x]

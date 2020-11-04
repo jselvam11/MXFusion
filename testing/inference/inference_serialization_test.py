@@ -173,7 +173,7 @@ class InferenceSerializationTests(unittest.TestCase):
 
 
     def test_gp_module_save_and_load(self):
-        np.random.seed(0)
+        #np.random.seed(0)
         X = np.random.rand(10, 3)
         Xt = np.random.rand(20, 3)
         Y = np.random.rand(10, 1)

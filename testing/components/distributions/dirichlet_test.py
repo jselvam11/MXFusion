@@ -26,7 +26,7 @@ from mxfusion.util.testutils import numpy_array_reshape
 from mxfusion.util.testutils import MockMXNetRandomGenerator
 
 
-@pytest.mark.usefixtures("set_seed")
+#@pytest.mark.usefixtures("set_seed")
 class TestDirichletDistribution(object):
     # scipy implementation of dirichlet throws an error if x_i does not sum to one and float32 is
     # not precise enough to have sum close enough to 1 after normalisation so using float64

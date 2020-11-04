@@ -24,7 +24,7 @@ from mxfusion.util.testutils import MockMXNetRandomGenerator
 from scipy.stats import beta
 
 
-@pytest.mark.usefixtures("set_seed")
+#@pytest.mark.usefixtures("set_seed")
 class TestBetaDistribution(object):
 
     @pytest.mark.parametrize("dtype, a, a_is_samples, b, b_is_samples, rv, rv_is_samples, num_samples", [

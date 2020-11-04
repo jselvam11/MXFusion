@@ -225,7 +225,7 @@ class FactorGraphTests(unittest.TestCase):
         v = Variable(shape=(1,))
         m.v2 = Normal.define_variable(mean=v, variance=mx.nd.array([1]))
         m.v3 = Normal.define_variable(mean=m.v2, variance=mx.nd.array([1]), shape=(10,))
-        np.random.seed(0)
+        #np.random.seed(0)
         v_mx = mx.nd.array(np.random.randn(1))
         v2_mx = mx.nd.array(np.random.randn(1))
         v3_mx = mx.nd.array(np.random.randn(10))
@@ -247,7 +247,7 @@ class FactorGraphTests(unittest.TestCase):
         assert log_pdf == (log_pdf_1 + log_pdf_2).asscalar()
 
     def test_draw_samples(self):
-        np.random.seed(0)
+        #np.random.seed(0)
         samples_1_np = np.random.randn(5)
         samples_1 = mx.nd.array(samples_1_np)
         samples_2_np = np.random.randn(50)
@@ -256,7 +256,7 @@ class FactorGraphTests(unittest.TestCase):
         v = Variable(shape=(1,))
         m.v2 = Normal.define_variable(mean=v, variance=mx.nd.array([1]), rand_gen=MockMXNetRandomGenerator(samples_1))
         m.v3 = Normal.define_variable(mean=m.v2, variance=mx.nd.array([0.1]), shape=(10,), rand_gen=MockMXNetRandomGenerator(samples_2))
-        np.random.seed(0)
+        #np.random.seed(0)
         v_np =np.random.rand(1)
         v_mx = mx.nd.array(v_np)
 

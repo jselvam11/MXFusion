@@ -22,7 +22,7 @@ from mxfusion.util.testutils import numpy_array_reshape
 from mxfusion.util.testutils import MockMXNetRandomGenerator
 
 
-@pytest.mark.usefixtures("set_seed")
+#@pytest.mark.usefixtures("set_seed")
 class TestCategoricalDistribution(object):
 
     @pytest.mark.parametrize("dtype, log_prob, log_prob_isSamples, rv, rv_isSamples, num_samples, one_hot_encoding, normalization", [

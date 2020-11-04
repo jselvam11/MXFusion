@@ -48,7 +48,7 @@ class InferenceAlgorithmTests(unittest.TestCase):
 
         dtype = 'float64'
 
-        np.random.seed(0)
+        #np.random.seed(0)
         x_np = np.random.rand(2)
         y_np = np.random.rand(3, 4)
         x_mx = mx.nd.array(x_np, dtype=dtype)
@@ -66,7 +66,7 @@ class InferenceAlgorithmTests(unittest.TestCase):
         from mxfusion.common import config
         config.DEFAULT_DTYPE = 'float64'
 
-        np.random.seed(0)
+        #np.random.seed(0)
         mean_groundtruth = 3.
         variance_groundtruth = 5.
         N = 100

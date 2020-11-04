@@ -20,6 +20,6 @@ import random
 
 @pytest.fixture(scope='session')
 def set_seed():
-    random.seed(0)
-    np.random.seed(0)
-    mx.random.seed(0)
+    #random.seed(0)
+    #np.random.seed(0)
+    #mx.random.seed(0)
